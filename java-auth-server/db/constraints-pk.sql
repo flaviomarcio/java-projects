@@ -1,0 +1,16 @@
+--;
+--table name: srv_auth.grant_code;
+--;
+alter table if exists srv_auth.grant_code add constraint pk__grant_code_id primary key (id);
+--;
+--table name: srv_auth.scope;
+--;
+alter table if exists srv_auth.scope add constraint pk__scope_id primary key (id);
+--;
+--table name: srv_auth.token;
+--;
+alter table if exists srv_auth.token add constraint pk__token_id primary key (id);
+--;
+--table name: srv_auth.user;
+--;
+alter table if exists srv_auth.user add constraint pk__user_id primary key (id);

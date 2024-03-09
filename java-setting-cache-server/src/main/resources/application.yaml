@@ -1,0 +1,90 @@
+server:
+  port: "${service.context.port:8080}"
+  servlet:
+    context-path: "${service.context.path:/api}"
+spring:
+  application:
+    name: app
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    time-zone: America/Sao_Paulo
+    serialization:
+      fail-on-empty-beans: false
+    deserialization:
+      fail-on-unknown-properties: true
+    date-format: yyyy-MM-dd HH:mm:ss
+#  datasource:
+#    url: ${service.datasource.url:jdbc:postgresql://localhost:5432/services}
+#    username: ${service.datasource.username:services}
+#    password: ${service.password.username:services}
+#  jpa:
+#    open-in-view: false
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+#  data:
+#    jpa:
+#      repositories:
+#        enabled: true
+  config:
+    import: ${vault_configimport:}
+  cloud:
+    vault:
+      uri: ${vault_uri:http://localhost:8200}
+      authentication: ${vault_authentication:token}
+      token: ${vault_token:00000000-0000-0000-0000-000000000000}
+      app-role:
+        role-id: ${vault_roleid}
+        secret-id: ${vault_secretid}
+      #Default
+      enabled: ${vault_enabled:false}
+      connection-timeout: ${vault_timeout:5000}
+      read-timeout: ${vault_timeout:5000}
+      fail-fast: ${vault_fastfail:true}
+
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+#    virtual-host: /
+#    listener:
+#      simple:
+#        default-requeue-rejected: false
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
+    path: /swagger
+  servers:
+    dev: http://localhost:8080
+    staging: http://staging:8081
+    prod: http://production:8082
+
+open-api:
+  version: v0.0.1
+  swagger-ui:
+    path: /swagger-ui.html
+
+feign:
+  client:
+    config:
+      default:
+        readTimeout: 800000
+        connectTimeout: 800000
+        loggerLevel: full
+logging:
+  level:
+    root: INFO
+  file:
+    name: /tmp/app.log
+
+
+service:
+  context:
+    port: 8080
+    path: /api
+  config:
+    environment: production
+    path: ${HOME}/cache-setting
