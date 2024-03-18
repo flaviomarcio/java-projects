@@ -6,7 +6,6 @@ import com.app.business.dto.Command;
 import com.app.business.dto.Target;
 import com.littlecode.containers.ObjectReturn;
 import com.littlecode.mq.MQ;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -68,8 +67,8 @@ public class IngesterService {
         this.callBack(this.proxy(in));
     }
 
-    public ObjectReturn callBack(ObjectReturn objectReturn){
-        if(!appConfig.isCallBackEnabled())
+    public ObjectReturn callBack(ObjectReturn objectReturn) {
+        if (!appConfig.isCallBackEnabled())
             return objectReturn;
         mq.setting().setClientId(appConfig.getCallBackClientId());
         mq.setting().setClientSecret(appConfig.getCallBackClientSecret());
@@ -87,12 +86,13 @@ public class IngesterService {
         if (in.getTarget() == null)
             return ObjectReturn.BadRequest(Target.class);
 
-        var target=in.getTarget();
+        var target = in.getTarget();
 
         return switch (in.getCommand()) {
             case INSERT, UPDATE, UPSERT -> commanderService.saveIn(target);
             case DELETE -> commanderService.delete(target);
-            default -> ObjectReturn.BadRequest("Invalid proxy command: %s, object: %s",in.getCommand(), target.getClass());
+            default ->
+                    ObjectReturn.BadRequest("Invalid proxy command: %s, object: %s", in.getCommand(), target.getClass());
         };
     }
 

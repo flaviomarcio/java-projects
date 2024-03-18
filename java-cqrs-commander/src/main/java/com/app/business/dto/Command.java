@@ -15,27 +15,24 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Command {
 
-    @Schema(title = "Command message id",
-            example = "0000-0000-0000-0000-000000000000",
-            description = "Message identofier",
-            requiredMode = Schema.RequiredMode.REQUIRED)
-    private UUID messageId;
-
     @Schema(title = "Command",
             example = "0000-0000-0000-0000-000000000000",
             description = "Command actions",
             requiredMode = Schema.RequiredMode.REQUIRED)
     public Action command;
-
     @Schema(title = "target",
             example = "0000-0000-0000-0000-000000000000",
             description = "Body of object target for command actions",
             requiredMode = Schema.RequiredMode.REQUIRED)
     public Target target;
-
     @Schema(title = "callBack",
             example = "0000-0000-0000-0000-000000000000",
             description = "Enable callback of message id",
             requiredMode = Schema.RequiredMode.REQUIRED)
     public boolean callBack;
+    @Schema(title = "Command message id",
+            example = "0000-0000-0000-0000-000000000000",
+            description = "Message identofier",
+            requiredMode = Schema.RequiredMode.REQUIRED)
+    private UUID messageId;
 }

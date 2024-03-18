@@ -1,6 +1,5 @@
 package com.app.business.service;
 
-import com.app.business.dto.Command;
 import com.app.business.dto.Target;
 import com.app.business.interfaces.CommandBaseService;
 import com.app.business.model.ofservice.CommanderModel;
@@ -69,7 +68,7 @@ public class CommanderService implements CommandBaseService<CommanderModel, Targ
     public ObjectReturn delete(String id) {
         if (id == null || id.trim().isEmpty())
             return ObjectReturn.BadRequest("Invalid id, id is empty or null", id);
-        var __id= PrimitiveUtil.toUUID(id);
+        var __id = PrimitiveUtil.toUUID(id);
         var model = this.privateGet(__id);
         if (model == null)
             return ObjectReturn.NoContent("Invalid id: %s", id);
@@ -88,7 +87,7 @@ public class CommanderService implements CommandBaseService<CommanderModel, Targ
     public ObjectReturn delete(Target target) {
         if (target == null)
             return ObjectReturn.BadRequest(Target.class);
-        if (target.getId()==null)
+        if (target.getId() == null)
             return ObjectReturn.BadRequest("Invalid %s.getId() is null", target.getClass());
         var model = this.privateGet(target.getId());
         return privateDelete(model);
@@ -97,12 +96,12 @@ public class CommanderService implements CommandBaseService<CommanderModel, Targ
     private CommanderModel privateGet(UUID id) {
         return
                 (id == null)
-                        ?null
+                        ? null
                         : repository.findById(id).orElse(null);
     }
 
     private ObjectReturn privateDelete(CommanderModel model) {
-        if(model == null)
+        if (model == null)
             return ObjectReturn.NoContent("Invalid model is null: %s", CommanderModel.class);
         model.setDtChange(LocalDateTime.now());
         model.setEnabled(false);

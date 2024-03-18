@@ -1,8 +1,8 @@
 package com.app.factory;
 
 import com.app.business.config.AppConfig;
-import com.app.business.model.ofservice.*;
-import com.app.business.repository.ofservice.*;
+import com.app.business.model.ofservice.CommanderModel;
+import com.app.business.repository.ofservice.CommandRepository;
 import com.app.business.service.CommanderService;
 import com.app.business.service.IngesterService;
 import com.littlecode.mq.MQ;
@@ -18,7 +18,7 @@ import java.util.*;
 @Service
 public class FactoryByTests {
     private final List<CommanderModel> commanderModelList = new ArrayList<>();
-    private final AppConfig appConfig=new AppConfig();
+    private final AppConfig appConfig = new AppConfig();
     private Environment mockEnvironment;
     private CommandRepository commandRepository;
     private CommanderService commanderService;
@@ -34,7 +34,7 @@ public class FactoryByTests {
         this.mockEnvironment = Mockito.mock(Environment.class);
         this.commandRepository = Mockito.mock(CommandRepository.class);
         this.commanderService = new CommanderService(commandRepository);
-        this.ingesterService = new IngesterService(Mockito.mock(MQ.class), appConfig,commanderService);
+        this.ingesterService = new IngesterService(Mockito.mock(MQ.class), appConfig, commanderService);
     }
 
     private void makeMockEnvironment() {

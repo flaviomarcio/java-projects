@@ -1,6 +1,5 @@
 package com.app.Tests;
 
-import com.app.business.dto.Command;
 import com.app.business.dto.Target;
 import com.app.business.model.ofservice.CommanderModel;
 import com.app.business.service.CommanderService;
@@ -21,7 +20,7 @@ public class CommanderTest {
     private final CommanderService CRUD = FACTORY.getCommanderService();
     private final List<CommanderModel> CRUDList = FACTORY.getCommanderModelList();
 
-    private boolean dataValidation(Target target){
+    private boolean dataValidation(Target target) {
         Assertions.assertNotNull(target);
         Assertions.assertNotNull(target.getId());
         Assertions.assertNotNull(target.getDtChange());
