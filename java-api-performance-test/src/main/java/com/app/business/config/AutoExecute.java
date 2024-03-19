@@ -14,8 +14,6 @@ public class AutoExecute {
     public AutoExecute(PerformanceService performanceService) {
         this.performanceService = performanceService;
         this.performanceService
-                .start()
-                .waitToFinished()
-                .quit();
+                .start();
     }
 }

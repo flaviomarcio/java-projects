@@ -52,7 +52,7 @@ app:
     timeout-secs: 5
   target:
     method: POST
-    uri: http://localhost:8080/
+    uri: http://localhost:8080/exec
   body:
     type: auto
     size-kb: 1024
