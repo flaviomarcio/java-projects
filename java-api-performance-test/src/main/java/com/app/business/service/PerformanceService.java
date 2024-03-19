@@ -78,6 +78,7 @@ public class PerformanceService {
             while(timeout.isAfter(LocalDateTime.now())){
                 log.info("thread[{}]: exec: {}", this.id,LocalDateTime.now());
                 try {
+                    //noinspection BusyWait
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
