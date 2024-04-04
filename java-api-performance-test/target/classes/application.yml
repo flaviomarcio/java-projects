@@ -1,0 +1,58 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+logging:
+  level:
+    root: INFO
+  file:
+    name: /tmp/app.log
+spring:
+  application:
+    name: app
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    time-zone: America/Sao_Paulo
+    serialization:
+      fail-on-empty-beans: false
+    deserialization:
+      fail-on-unknown-properties: true
+    date-format: yyyy-MM-dd HH:mm:ss
+
+  datasource:
+    #driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username:
+    password:
+  config:
+    import:
+  cloud:
+    vault:
+      uri: http://localhost:8200
+      authentication: token
+      token: 00000000-0000-0000-0000-000000000000
+      app-role:
+        role-id:
+        secret-id:
+      enabled: false
+      connection-timeout: 5000
+      read-timeout: 5000
+      fail-fast: true
+  security:
+    user:
+      name: services
+      password: services
+
+app:
+  parallelism:
+    thread-pool: 10
+    thread-count: 10
+    try-count: 0
+    timeout-secs: 5
+  target:
+    method: POST
+    uri: http://localhost:8080/exec
+  body:
+    type: auto
+    size-kb: 1024

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-233.13135.103">
+    <data-source name="services@localhost" uuid="4cc61797-af79-4dc8-be95-6c1d4f373ccc">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <secret-storage>master_key</secret-storage>
+      <auth-provider>pgpass</auth-provider>
+      <user-name>services</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,55 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: app
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    time-zone: America/Sao_Paulo
+    serialization:
+      fail-on-empty-beans: false
+    deserialization:
+      fail-on-unknown-properties: true
+    date-format: yyyy-MM-dd HH:mm:ss
+  activemq:
+    broker-url: tcp://srv-activemq.local:61616
+    user: admin
+    password: admin
+    packages:
+      trust-all: true
+  datasource:
+    url: jdbc:postgresql://srv-postgres.local:5432/postgres
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+  data:
+    jpa:
+      repositories:
+        enabled: true
+  config:
+    import: ${vault_configimport:}
+  cloud:
+    vault:
+      uri: ${vault_uri:http://srv-vault.local:8200}
+      authentication: ${vault_authentication:token}
+      token: ${vault_token:00000000-0000-0000-0000-000000000000}
+      app-role:
+        role-id: ${vault_roleid}
+        secret-id: ${vault_secretid}
+      #Default
+      enabled: ${vault_enabled:false}
+      connection-timeout: ${vault_timeout:5000}
+      read-timeout: ${vault_timeout:5000}
+      fail-fast: ${vault_fastfail:true}
+
+
+token:
+  debug: true
+  principal:
+    sub: 100416b9-3d34-d348-2c47-a7f06ca50f29
