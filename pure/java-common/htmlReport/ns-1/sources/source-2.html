@@ -1,0 +1,262 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > SwaggerConfig</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.app.common.config</a>
+</div>
+
+<h1>Coverage Summary for Class: SwaggerConfig (com.app.common.config)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SwaggerConfig</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/29)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">SwaggerConfig$Settings</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/10)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/39)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.app.common.config;
+&nbsp;
+&nbsp;import io.swagger.v3.oas.models.OpenAPI;
+&nbsp;import io.swagger.v3.oas.models.info.Info;
+&nbsp;import io.swagger.v3.oas.models.media.StringSchema;
+&nbsp;import io.swagger.v3.oas.models.parameters.Parameter;
+&nbsp;import io.swagger.v3.oas.models.servers.Server;
+&nbsp;import lombok.*;
+&nbsp;import org.springdoc.core.customizers.OperationCustomizer;
+&nbsp;import org.springframework.beans.factory.annotation.Value;
+&nbsp;import org.springframework.context.annotation.Bean;
+&nbsp;import org.springframework.context.annotation.Configuration;
+&nbsp;import org.springframework.http.HttpHeaders;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.Collections;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@Configuration
+&nbsp;@Getter
+<b class="nc">&nbsp;@RequiredArgsConstructor</b>
+&nbsp;public class SwaggerConfig {
+&nbsp;
+&nbsp;    private static final String STATIC_BEARER = &quot;Bearer &quot;;
+&nbsp;    private static final String STATIC_HEADER = &quot;header&quot;;
+<b class="nc">&nbsp;    private final Settings settings;</b>
+&nbsp;
+&nbsp;
+&nbsp;    @Bean
+<b class="nc">&nbsp;    public OpenAPI makeOpenAPI() {</b>
+<b class="nc">&nbsp;        OpenAPI servers = new OpenAPI()</b>
+<b class="nc">&nbsp;                .info(</b>
+<b class="nc">&nbsp;                        new Info()</b>
+<b class="nc">&nbsp;                                .title(String.format(&quot;%s %s - %s&quot;, getSettings().getInfoCompany(), getSettings().getInfoProduct(), getSettings().getInfoTitle()))</b>
+<b class="nc">&nbsp;                                .description(getSettings().getInfoDescription())</b>
+<b class="nc">&nbsp;                                .version(getSettings().getInfoVersion())</b>
+&nbsp;                )
+<b class="nc">&nbsp;                .servers(makeServerList());</b>
+&nbsp;        return servers;
+<b class="nc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    @Bean
+&nbsp;    public OperationCustomizer makeDefaultHeaders() {
+<b class="nc">&nbsp;        OperationCustomizer operationCustomizer = (operation, handlerMethod) -&gt; {</b>
+&nbsp;            operation
+&nbsp;                    .addParametersItem(
+&nbsp;                            new Parameter()
+&nbsp;                                    .in(STATIC_HEADER)
+<b class="nc">&nbsp;                                    .name(HttpHeaders.AUTHORIZATION)</b>
+<b class="nc">&nbsp;                                    .required(true)</b>
+&nbsp;                                    .schema(new StringSchema())
+<b class="nc">&nbsp;                                    .description(STATIC_BEARER + &quot; token&quot;)</b>
+<b class="nc">&nbsp;                    );</b>
+<b class="nc">&nbsp;</b>
+&nbsp;            return operation;
+<b class="nc">&nbsp;        };</b>
+<b class="nc">&nbsp;        return operationCustomizer;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Getter
+&nbsp;    @Configuration
+<b class="nc">&nbsp;    public static class Settings {</b>
+<b class="nc">&nbsp;        @Value(value = &quot;${springdoc.info.company:}&quot;)</b>
+<b class="nc">&nbsp;        private String infoCompany;</b>
+&nbsp;
+<b class="nc">&nbsp;        @Value(value = &quot;${springdoc.info.product:}&quot;)</b>
+<b class="nc">&nbsp;        private String infoProduct;</b>
+<b class="nc">&nbsp;</b>
+<b class="nc">&nbsp;        @Value(value = &quot;${springdoc.info.title:}&quot;)</b>
+<b class="nc">&nbsp;        private String infoTitle;</b>
+&nbsp;
+&nbsp;        @Value(value = &quot;${springdoc.info.description:}&quot;)
+<b class="nc">&nbsp;        private String infoDescription;</b>
+&nbsp;
+<b class="nc">&nbsp;        @Value(value = &quot;${springdoc.info.version:v0.0.0}&quot;)</b>
+&nbsp;        private String infoVersion;
+&nbsp;
+&nbsp;        @Value(value = &quot;${springdoc.servers.dev:}&quot;)
+&nbsp;        private String srvDev;
+&nbsp;
+&nbsp;        @Value(value = &quot;${springdoc.servers.stg:}&quot;)
+<b class="nc">&nbsp;        private String srvStg;</b>
+&nbsp;
+&nbsp;        @Value(value = &quot;${springdoc.servers.prd:}&quot;)
+<b class="nc">&nbsp;        private String srvPrd;</b>
+&nbsp;
+&nbsp;        @Value(value = &quot;${server.servlet.context-path:/}&quot;)
+<b class="nc">&nbsp;        private String infoContextPath;</b>
+&nbsp;        public Settings(){
+&nbsp;            super();
+<b class="nc">&nbsp;        }</b>
+&nbsp;    }
+&nbsp;
+<b class="nc">&nbsp;    private List&lt;Server&gt; makeServerList() {</b>
+&nbsp;        List&lt;Server&gt; __return = new ArrayList&lt;&gt;();
+&nbsp;        List&lt;String&gt; servers= new ArrayList&lt;&gt;();
+<b class="nc">&nbsp;        servers.add(getSettings().getSrvDev());</b>
+&nbsp;        servers.add(getSettings().getSrvStg());
+&nbsp;        servers.add(getSettings().getSrvPrd());
+<b class="nc">&nbsp;        for (String server : servers) {</b>
+&nbsp;            if (server==null || server.trim().isEmpty())
+&nbsp;                continue;
+<b class="nc">&nbsp;            __return.add(</b>
+&nbsp;                    new Server()
+&nbsp;                            .url(String.format(&quot;%s%s&quot;, server, getSettings().getInfoContextPath())
+<b class="nc">&nbsp;                            )</b>
+&nbsp;            );
+<b class="nc">&nbsp;        }</b>
+&nbsp;        return Collections.unmodifiableList(__return);
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-04-04 16:11</div>
+</div>
+</body>
+</html>
