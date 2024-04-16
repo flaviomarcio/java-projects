@@ -30,8 +30,8 @@ public class FactoryByTests {
         Mockito.when(mq.dispatcher(Mockito.any(Object.class))).thenReturn(null);
 
         this.appConfig = Mockito.mock(AppConfig.class);
-        Mockito.when(appConfig.isAppProxyEnabled()).thenReturn(true);
-        Mockito.when(appConfig.getAppProxyStateSent()).thenReturn("Sent");
+        Mockito.when(appConfig.isEnabled()).thenReturn(true);
+        Mockito.when(appConfig.getStateSent()).thenReturn("Sent");
         this.proxyService = new ProxyService(appConfig, mq);
     }
 

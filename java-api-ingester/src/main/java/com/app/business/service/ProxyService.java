@@ -21,7 +21,7 @@ public class ProxyService {
     private final MQ mq;
 
     private ObjectReturn dispatcher(Object payload) {
-        if (!appConfig.isAppProxyEnabled())
+        if (!appConfig.isEnabled())
             return ObjectReturn.Fail("dispatcher disabled");
 
         var task = TaskIn
@@ -29,7 +29,7 @@ public class ProxyService {
                 .id(UUID.randomUUID())
                 .dt(LocalDateTime.now())
                 .checksum(ObjectUtil.toMd5Uuid(payload))
-                .state(appConfig.getAppProxyStateSent())
+                .state(appConfig.getStateSent())
                 .payload(payload)
                 .build();
 

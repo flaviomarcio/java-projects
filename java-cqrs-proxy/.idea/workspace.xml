@@ -4,7 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9339b34f-411c-40bb-b2dc-91d649d41ca4" name="Changes" comment="" />
+    <list default="true" id="9339b34f-411c-40bb-b2dc-91d649d41ca4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../java-api-crud/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-api-crud/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-api-crud/src/main/java/com/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-api-crud/src/main/java/com/app/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-api-crud/src/main/java/com/app/business/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-api-crud/src/main/java/com/app/business/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-api-crud/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-api-crud/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-api-ingester/src/main/java/com/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-api-ingester/src/main/java/com/app/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-api-ingester/src/main/java/com/app/business/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-api-ingester/src/main/java/com/app/business/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-api-ingester/src/main/java/com/app/business/service/ProxyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-api-ingester/src/main/java/com/app/business/service/ProxyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-api-ingester/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-api-ingester/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-api-ingester/src/test/java/com/app/Tests/ProxyServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-api-ingester/src/test/java/com/app/Tests/ProxyServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-api-ingester/src/test/java/com/app/factory/FactoryByTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-api-ingester/src/test/java/com/app/factory/FactoryByTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-auth-server/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-auth-server/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-auth-server/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-auth-server/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-auth-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-auth-server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-auth-server/src/main/java/com/org/business/dto/TokenOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-auth-server/src/main/java/com/org/business/dto/TokenOut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-consumer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-consumer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-consumer/src/main/java/com/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-consumer/src/main/java/com/app/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-consumer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-consumer/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-cqrs-commander/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-cqrs-commander/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-cqrs-commander/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-cqrs-commander/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-cqrs-commander/src/main/java/com/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-cqrs-commander/src/main/java/com/app/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-cqrs-commander/src/main/java/com/app/business/adapters/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-cqrs-commander/src/main/java/com/app/business/adapters/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-cqrs-commander/src/main/java/com/app/business/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-cqrs-commander/src/main/java/com/app/business/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-cqrs-commander/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-cqrs-commander/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/business/adapters/controller/CRUDGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/business/adapters/controller/CRUDGroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/business/adapters/controller/CRUDProducerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/business/adapters/controller/CRUDProducerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/business/adapters/controller/IngesterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/business/adapters/controller/IngesterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,11 +65,16 @@
     &quot;JUnit.CRUDProducerTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CRUDTargetTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.EventServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;release/0.0.1&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/storage/home/person-git/github/java-projects/java-notify-proxy&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/storage/home/person-job/person/git/github/java-projects/java-cqrs-proxy&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -46,12 +83,15 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.app.business.service.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.EventServiceTest">
+  <component name="RunManager" selected="Spring Boot.Application">
     <configuration name="CRUDGroupTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
@@ -125,8 +165,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.app.Application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.Application" />
         <item itemvalue="JUnit.EventServiceTest" />
         <item itemvalue="JUnit.CRUDTargetTest" />
         <item itemvalue="JUnit.CRUDProducerTest" />
@@ -137,7 +191,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-20.0.2-corretto-20.0.2.1-f644763e9732-05769f21" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -155,6 +210,10 @@
       <workItem from="1710030938606" duration="119000" />
       <workItem from="1710096294417" duration="5000" />
       <workItem from="1711574885698" duration="1868000" />
+      <workItem from="1713280163199" duration="863000" />
+      <workItem from="1713281072091" duration="397000" />
+      <workItem from="1713281511655" duration="139000" />
+      <workItem from="1713281661725" duration="2000" />
     </task>
     <servers />
   </component>

@@ -19,17 +19,17 @@ public class Controller {
         return ingesterService.select(PrimitiveUtil.toUUID(id)).asResultHttp();
     }
 
-    @PostMapping("/")
+    @PostMapping()
     public ResponseEntity<?> post(@RequestBody Command in) {
         return ingesterService.insert(in).asResultHttp();
     }
 
-    @PutMapping("/")
+    @PutMapping()
     public ResponseEntity<?> put(@RequestBody Command in) {
         return ingesterService.update(in).asResultHttp();
     }
 
-    @DeleteMapping("/")
+    @DeleteMapping()
     public ResponseEntity<?> delete(@RequestBody Command in) {
         return ingesterService.delete(in).asResultHttp();
     }

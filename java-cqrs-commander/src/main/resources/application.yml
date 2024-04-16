@@ -1,7 +1,7 @@
 server:
   port: 8080
   servlet:
-    context-path: /api
+    context-path: /
 spring:
   application:
     name: app
@@ -24,9 +24,10 @@ spring:
         show_sql: false
         use_sql_comments: false
   datasource:
-    url: jdbc:postgresql://localhost:5432/services
-    username: services
-    password: services
+    #driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username:
+    password:
   config:
     import:
   cloud:
@@ -55,18 +56,19 @@ logging:
 
 springdoc:
   swagger-ui:
+    operationsSorter: method
     disable-swagger-default-url: true
-    path: /swagger
+    path: swagger-ui
+  servers:
+    dev: http://localhost:8080
+    stg: http://localhost:8080
+    prd: http://localhost:8080
   info:
     company: "Company"
     product: "CRQS-Proxy"
     title: "Serviço proxy para comandos"
     description: "Serviço proxy para comandos"
     version: "1.0.0"
-  servers:
-    dev:
-    stg:
-    prd:
 
 littlecode:
   setup:
@@ -99,10 +101,11 @@ littlecode:
       secret: services
 
 app:
-  title: "Model Name"
-  className: ModelName
-  callback:
-    queue: "commander-callback-mq"
-    client:
-      id: services
-      secret: services
+  config:
+    title: "Model Name"
+    className: ModelName
+    callback:
+      queue: "commander-callback-mq"
+      client:
+        id: services
+        secret: services

@@ -27,7 +27,7 @@ public class ProxyServiceTest {
             Assertions.assertNotNull(taskOut.getId());
             Assertions.assertNotNull(taskOut.getDt());
             Assertions.assertNotNull(taskOut.getChecksum());
-            Assertions.assertEquals(taskOut.getState(), FACTORY.getAppConfig().getAppProxyStateSent());
+            Assertions.assertEquals(taskOut.getState(), FACTORY.getAppConfig().getStateSent());
         }
     }
 

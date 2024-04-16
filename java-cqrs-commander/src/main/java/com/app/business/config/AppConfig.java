@@ -7,18 +7,18 @@ import org.springframework.context.annotation.Configuration;
 @Getter
 @Configuration
 public class AppConfig {
-    @Value("${app.title:NoTitle}")
+    @Value("${app.config.title:NoTitle}")
     private String title;
-    @Value("${app.className:NoClass}")
+    @Value("${app.config.className:NoClass}")
     private String className;
-    @Value("${app.callBack.enabled:false}")
+    @Value("${app.config.callBack.enabled:false}")
     private boolean callBackEnabled;
-    @Value("${app.callBack.queue:NoQueueName}")
+    @Value("${app.config.callBack.queue:NoQueueName}")
     private String callBackQueue;
-    @Value("${app.callBack.queue:false}")
+    @Value("${app.config.callBack.autoCreate:false}")
     private boolean callBackQueueAutoCreate;
-    @Value("${app.callBack.client.id:}")
+    @Value("${app.config.callBack.client.id:}")
     private String callBackClientId;
-    @Value("${app.callBack.client.secret:}")
+    @Value("${app.config.callBack.client.secret:}")
     private String callBackClientSecret;
 }

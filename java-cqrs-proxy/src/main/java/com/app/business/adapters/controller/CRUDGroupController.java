@@ -15,12 +15,12 @@ public class CRUDGroupController {
 
     private final CRUDGroupService notifyGroupCRUD;
 
-    @PostMapping("/")
+    @PostMapping()
     public ResponseEntity<?> post(@RequestBody GroupIn in) {
         return notifyGroupCRUD.saveIn(in).asResultHttp();
     }
 
-    @PutMapping("/")
+    @PutMapping()
     public ResponseEntity<?> put(@RequestBody GroupIn in) {
         return notifyGroupCRUD.saveIn(in).asResultHttp();
     }
@@ -30,7 +30,7 @@ public class CRUDGroupController {
         return notifyGroupCRUD.findIn(PrimitiveUtil.toUUID(id)).asResultHttp();
     }
 
-    @DeleteMapping("/")
+    @DeleteMapping()
     public ResponseEntity<?> disabled(@RequestParam String id) {
         return notifyGroupCRUD.disable(id).asResultHttp();
     }

@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/crud/group")
+@RequestMapping("/crud/producer")
 @RequiredArgsConstructor
 public class CRUDProducerController {
 
@@ -25,12 +25,12 @@ public class CRUDProducerController {
         return notifyGroupCRUD.saveIn(in).asResultHttp();
     }
 
-    @GetMapping()
+    @GetMapping("find")
     public ResponseEntity<?> find(@RequestParam String id) {
         return notifyGroupCRUD.findIn(PrimitiveUtil.toUUID(id)).asResultHttp();
     }
 
-    @DeleteMapping("/")
+    @DeleteMapping()
     public ResponseEntity<?> disabled(@RequestParam String id) {
         return notifyGroupCRUD.disable(id).asResultHttp();
     }

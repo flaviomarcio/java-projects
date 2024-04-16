@@ -53,22 +53,20 @@ spring:
       name: services
       password: services
 springdoc:
-  api-docs:
-    path: /api-docs
   swagger-ui:
     operationsSorter: method
     disable-swagger-default-url: true
-    path: /swagger-ui.html
+    path: swagger-ui
+  servers:
+    dev: http://localhost:8080
+    stg: http://localhost:8080
+    prd: http://localhost:8080
   info:
     company: "Company"
-    product: "CRQS-Proxy"
-    title: "CRUD - Tools"
-    description: "Serviço para cadastro de ferramentas"
+    product: "API Ingester"
+    title: "Ingester tools"
+    description: "Serviço ingestão de requisições"
     version: "1.0.0"
-  servers:
-    dev:
-    stg:
-    prd:
 
 littlecode:
   setup:
@@ -80,9 +78,8 @@ littlecode:
         auto-start: true
         auto-save: true
 
-
 app:
-  proxy:
+  config:
     enabled: true
     state:
       sent: "Sent"
