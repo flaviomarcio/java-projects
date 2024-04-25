@@ -1,8 +1,13 @@
 package com.app.business.service.impl;
 
+import com.app.business.config.AppConfig;
 import com.app.business.model.ofservice.NotifyForwarder;
 
-public class NotifyDispatcherTelegram extends NotifyDispatcherNone {
+public class NotifyDispatcherTelegram extends NotifyDispatcherLogging {
+
+    public NotifyDispatcherTelegram(AppConfig appConfig) {
+        super(appConfig);
+    }
 
     @Override
     public NotifyForwarder.Dispatcher dispatcher() {

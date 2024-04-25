@@ -37,13 +37,13 @@ public class NotifyForwarder {
 
     public Dispatcher getDispatcher() {
         if (this.dispatcher == null)
-            this.dispatcher = Dispatcher.None;
+            this.dispatcher = Dispatcher.Logging;
         return this.dispatcher;
     }
 
     @Getter
     public enum Dispatcher {
-        None(0),
+        Logging(0),
         eMail(1),
         Telegram(2),
         Slack(3),

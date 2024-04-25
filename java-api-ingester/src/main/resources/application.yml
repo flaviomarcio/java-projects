@@ -20,6 +20,8 @@ spring:
       fail-on-unknown-properties: true
     date-format: yyyy-MM-dd HH:mm:ss
   jpa:
+    hibernate:
+      ddl-auto: none
     properties:
       hibernate:
         hbm2ddl:
@@ -35,23 +37,24 @@ spring:
     username:
     password:
   config:
-    import:
+    import: ${vault_configimport:}
   cloud:
     vault:
-      uri: http://localhost:8200
-      authentication: token
-      token: 00000000-0000-0000-0000-000000000000
+      enabled: ${vault_enabled:false}
+      scheme: ${vault_scheme:http}
+      uri: ${vault_uri:http://localhost:8200}
+      authentication: ${vault_authentication:TOKEN}
+      token: ${vault_token:}
       app-role:
-        role-id:
-        secret-id:
-      enabled: false
-      connection-timeout: 5000
-      read-timeout: 5000
-      fail-fast: true
-  security:
-    user:
-      name: services
-      password: services
+        role-id: ${vault_app_role_role_id:}
+        secret-id: ${vault_app_role_secret_id:}
+      connection-timeout: ${vault_timeout:5000}
+      read-timeout: ${vault_timeout:5000}
+      fail-fast: ${vault_fastfail:true}
+      kv:
+        backend: ${vault_kv_path:}
+        default-context: ${vault_application_name:}
+
 springdoc:
   swagger-ui:
     operationsSorter: method
@@ -67,16 +70,6 @@ springdoc:
     title: "Ingester tools"
     description: "Serviço ingestão de requisições"
     version: "1.0.0"
-
-littlecode:
-  setup:
-    auto-start: false
-    database:
-      auto-apply: false
-      ddl:
-        safe-drops: true
-        auto-start: true
-        auto-save: true
 
 app:
   config:

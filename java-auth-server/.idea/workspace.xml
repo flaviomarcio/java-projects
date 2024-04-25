@@ -5,10 +5,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04b1484c-e26e-4a2d-bc27-5a6f9377904f" name="Changes" comment="refactor password verify">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/config/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/security/JwtParserUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/security/auth/RequestAuthentication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/security/auth/RequestConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/security/auth/RequestFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-api-crud/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-api-crud/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-api-ingester/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-api-ingester/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-auth-client-jwt/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-auth-client-jwt/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/business/dto/TokenOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/business/dto/TokenOut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/business/adapters/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/business/adapters/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/business/adapters/ScopeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/business/adapters/ScopeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/business/config/SetupConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/business/config/SetupConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/business/model/DbTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/business/model/DbTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/business/model/GrantCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/business/model/GrantCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/business/model/Scope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/business/model/Scope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/business/model/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/business/model/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/business/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/business/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/business/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/business/service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/business/service/DispatcherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/business/service/DispatcherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/business/service/ScopeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/business/service/ScopeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/business/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/business/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/adapters/JwtToUserConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/adapters/JwtToUserConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/adapters/UserToJwtConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/adapters/UserToJwtConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/config/SecurityBeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/config/SecurityBeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/config/SettingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/config/SettingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/helper/MsgHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/helper/MsgHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/helper/UrlHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/helper/UrlHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/security/JwtParserUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/security/KeyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/security/KeyUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/security/SecurityUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/security/SecurityUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/security/TokenGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/security/TokenGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/security/auth/ContextHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/security/auth/ContextHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/security/auth/RequestAuthentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/security/auth/RequestConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/security/auth/RequestFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/security/auth/RequestToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/security/auth/RequestToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/security/exceptions/JWTInvalidException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/security/exceptions/JWTInvalidException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/utils/HashUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/utils/PasswordUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/utils/PasswordUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/org/core/utils/Singletons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/org/commons/utils/Singletons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/org/factory/FactoryByTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/org/factory/FactoryByTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-consumer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-consumer/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-cqrs-commander/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-cqrs-commander/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-cqrs-proxy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-cqrs-proxy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-cqrs-proxy/src/main/java/com/app/common/application/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-cqrs-proxy/src/main/java/com/app/common/application/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-cqrs-proxy/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-cqrs-proxy/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-notify-proxy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-notify-proxy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-notify-proxy/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-notify-proxy/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-setting-cache-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-setting-cache-server/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pure/java-api-crud/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../pure/java-api-crud/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pure/java-common/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../pure/java-common/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,34 +96,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Application.executor": "Debug",
-    "JUnit.AuthenticationServiceTest.executor": "Debug",
-    "JUnit.UserManagerServiceTest.executor": "Run",
-    "JUnit.UserServiceTest.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "release/0.0.1",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/mnt/storage/home/person-job/person/git/github/java-projects/java-api-crud",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Application.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.AuthenticationServiceTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.UserManagerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;release/0.0.1&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/debian/job/person/git/github/3rdparty/java/Spring-Boot-3-with-spring-security-and-swagger-ui&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/db" />
@@ -84,11 +139,11 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.org.core.config" />
       <recent name="com.org.business.model" />
       <recent name="com.org.business.repository" />
       <recent name="com.org.core.setup.privates" />
       <recent name="com.org.core.setup" />
-      <recent name="com.org.business.exceptions" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Application">
@@ -182,6 +237,8 @@
       <workItem from="1704287942381" duration="543000" />
       <workItem from="1704288972113" duration="49000" />
       <workItem from="1713278021746" duration="549000" />
+      <workItem from="1713285753050" duration="3519000" />
+      <workItem from="1713289577770" duration="601000" />
     </task>
     <task id="LOCAL-00001" summary="refactor password verify">
       <option name="closed" value="true" />
@@ -229,12 +286,12 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/org/core/helper/UrlHelper.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/org/commons/helper/UrlHelper.java</url>
           <line>86</line>
           <option name="timeStamp" value="342" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/org/core/helper/UrlHelper.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/org/commons/helper/UrlHelper.java</url>
           <line>85</line>
           <option name="timeStamp" value="343" />
         </line-breakpoint>
@@ -327,6 +384,21 @@
           <url>jar://$MAVEN_REPOSITORY$/com/littlecode/setup/0.0.1/setup-0.0.1.jar!/com/littlecode/setup/db/metadata/privates/SetupDdlForAnsi.class</url>
           <line>254</line>
           <option name="timeStamp" value="466" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/org/commons/security/JwtParserUtil.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="467" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/org/commons/security/JwtParserUtil.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="468" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/org/commons/security/JwtParserUtil.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="469" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

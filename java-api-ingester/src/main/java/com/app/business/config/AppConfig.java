@@ -7,10 +7,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Getter
 @Configuration
-@ConfigurationProperties(prefix = "app.config")
 public class AppConfig {
-    @Value("${enabled}")
+    @Value("${app.config.enabled}")
     private boolean enabled;
-    @Value("${state.sent}")
+    @Value("${app.config.state.sent}")
     private String stateSent;
 }

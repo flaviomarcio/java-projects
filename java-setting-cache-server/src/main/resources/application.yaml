@@ -18,7 +18,9 @@ spring:
 #    url: ${service.datasource.url:jdbc:postgresql://localhost:5432/services}
 #    username: ${service.datasource.username:services}
 #    password: ${service.password.username:services}
-#  jpa:
+  jpa:
+    hibernate:
+      ddl-auto: none
 #    open-in-view: false
 #    properties:
 #      hibernate:

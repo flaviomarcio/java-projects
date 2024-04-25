@@ -12,7 +12,6 @@ import org.springframework.http.HttpHeaders;
 import java.util.ArrayList;
 import java.util.List;
 
-@SuppressWarnings("unused")
 @Configuration
 public class SwaggerConfig {
 

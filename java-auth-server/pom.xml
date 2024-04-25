@@ -5,29 +5,32 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.9</version>
+        <version>3.2.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>org.service</groupId>
+    <groupId>com.app</groupId>
     <artifactId>app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>app</name>
     <description>Application</description>
     <properties>
-        <commons-io-version>2.13.0</commons-io-version>
-        <commons-lang3-version>3.12.0</commons-lang3-version>
-        <gson-version>2.10</gson-version>
-        <guava-version>31.1-jre</guava-version>
-        <jackson-version>2.14.0</jackson-version>
-        <java-jwt.version>4.2.1</java-jwt.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>17</java.version>
-        <jwks-rsa.version>0.21.2</jwks-rsa.version>
-        <mockito-version>1.10.19</mockito-version>
-        <modelmapper-version>3.1.1</modelmapper-version>
-        <spring-boot-version>2.7.9</spring-boot-version>
-        <spring-cloud.version>2021.0.3</spring-cloud.version>
-        <springdoc-version>1.7.0</springdoc-version>
-        <easy.version>0.0.1</easy.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <littlecode-version>1.0.0</littlecode-version>
+        <commons-io-version>2.16.1</commons-io-version>
+        <commons-lang3-version>3.14.0</commons-lang3-version>
+        <springdoc-webflux-ui-version>2.5.0</springdoc-webflux-ui-version>
+        <jackson-version>2.15.2</jackson-version>
+        <java-jwt-version>4.2.1</java-jwt-version>
+        <jwks-rsa-version>0.21.2</jwks-rsa-version>
+        <modelmapper-version>3.2.0</modelmapper-version>
+        <spring-boot-version>3.2.4</spring-boot-version>
+        <spring-cloud-version>2023.0.0</spring-cloud-version>
+        <postgresql-version>42.7.3</postgresql-version>
+        <h2-version>2.2.224</h2-version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -43,7 +46,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
+                <version>${spring-cloud-version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -52,18 +55,18 @@
     <dependencies>
         <dependency>
             <groupId>com.littlecode</groupId>
-            <artifactId>setup</artifactId>
-            <version>${easy.version}</version>
+            <artifactId>core-spring</artifactId>
+            <version>${littlecode-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.littlecode</groupId>
+            <artifactId>setup-spring</artifactId>
+            <version>${littlecode-version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation -->
         <dependency>
@@ -75,21 +78,32 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-webflux -->
         <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-oauth2-authorization-server -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-authorization-server</artifactId>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-oauth2-resource-server -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-oauth2-authorization-server -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-authorization-server</artifactId>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -130,84 +144,61 @@
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3-version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>${gson-version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava-version}</version>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
         <dependency>
             <groupId>com.auth0</groupId>
             <artifactId>java-jwt</artifactId>
-            <version>${java-jwt.version}</version>
+            <version>${java-jwt-version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.auth0/jwks-rsa -->
         <dependency>
             <groupId>com.auth0</groupId>
             <artifactId>jwks-rsa</artifactId>
-            <version>${jwks-rsa.version}</version>
+            <version>${jwks-rsa-version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+
+        <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-webflux-ui -->
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>${jackson-version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-            <version>${jackson-version}</version>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webflux-ui</artifactId>
+            <version>${springdoc-webflux-ui-version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
+            <version>${postgresql-version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui -->
+        <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
         <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-ui</artifactId>
-            <version>${springdoc-version}</version>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${h2-version}</version>
+            <scope>runtime</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
         <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>${mockito.version}</version>
-            <scope>test</scope>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc8</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle.database.ha</groupId>
+            <artifactId>ons</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ucp</artifactId>
         </dependency>
 
     </dependencies>
     <build>
         <plugins>
-            <!--            <plugin>-->
-            <!--                <groupId>org.apache.maven.plugins</groupId>-->
-            <!--                <artifactId>maven-jar-plugin</artifactId>-->
-            <!--                <configuration>-->
-            <!--                    <includes>-->
-            <!--                        <include>easy.setup.ddl</include>-->
-            <!--                    </includes>-->
-            <!--                </configuration>-->
-            <!--            </plugin>-->
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
         </plugins>

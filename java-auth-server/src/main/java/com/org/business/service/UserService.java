@@ -1,15 +1,15 @@
 package com.org.business.service;
 
+import com.littlecode.parsers.HashUtil;
 import com.org.business.domain.AuthMode;
 import com.org.business.dto.SignupIn;
 import com.org.business.dto.UserOut;
 import com.org.business.exceptions.*;
 import com.org.business.model.User;
 import com.org.business.repository.UserRepository;
-import com.org.core.helper.MsgHelper;
-import com.org.core.utils.HashUtil;
-import com.org.core.utils.PasswordUtil;
-import com.org.core.utils.Singletons;
+import com.org.commons.helper.MsgHelper;
+import com.org.commons.utils.PasswordUtil;
+import com.org.commons.utils.Singletons;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

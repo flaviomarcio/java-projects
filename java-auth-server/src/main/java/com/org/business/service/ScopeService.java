@@ -3,8 +3,8 @@ package com.org.business.service;
 import com.org.business.dto.ScopeOut;
 import com.org.business.model.Scope;
 import com.org.business.repository.ScopeRepository;
-import com.org.core.config.SettingService;
-import com.org.core.utils.Singletons;
+import com.org.commons.config.SettingService;
+import com.org.commons.utils.Singletons;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

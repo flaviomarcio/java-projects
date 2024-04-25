@@ -1,5 +1,6 @@
 package com.org.business.service;
 
+import com.littlecode.parsers.HashUtil;
 import com.org.business.dto.*;
 import com.org.business.exceptions.InvalidInformationException;
 import com.org.business.exceptions.InvalidObjectException;
@@ -9,11 +10,10 @@ import com.org.business.model.Token;
 import com.org.business.model.User;
 import com.org.business.repository.GrantCodeRepository;
 import com.org.business.repository.TokenRepository;
-import com.org.core.helper.MsgHelper;
-import com.org.core.security.auth.RequestToken;
-import com.org.core.utils.HashUtil;
-import com.org.core.utils.PasswordUtil;
-import com.org.core.utils.Singletons;
+import com.org.commons.helper.MsgHelper;
+import com.org.commons.security.auth.RequestToken;
+import com.org.commons.utils.PasswordUtil;
+import com.org.commons.utils.Singletons;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

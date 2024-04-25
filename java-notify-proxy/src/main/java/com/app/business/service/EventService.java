@@ -2,7 +2,6 @@ package com.app.business.service;
 
 import com.app.business.dto.NotifyContainer;
 import com.app.business.dto.NotifyEventIn;
-import com.app.business.interfaces.NotifyDispatcherInterface;
 import com.app.business.model.ofservice.NotifyEvent;
 import com.app.business.model.ofservice.NotifyEventItem;
 import com.app.business.model.ofservice.NotifyForwarder;
@@ -36,7 +35,7 @@ public class EventService {
 
     private static Map<NotifyForwarder.Dispatcher, Class<?>> makeInterfaces() {
         return Map.of(
-                NotifyForwarder.Dispatcher.None, NotifyDispatcherNone.class,
+                NotifyForwarder.Dispatcher.Logging, NotifyDispatcherLogging.class,
                 NotifyForwarder.Dispatcher.eMail, NotifyDispatcherEMail.class,
                 NotifyForwarder.Dispatcher.GoogleChat, NotifyDispatcherGoogleChat.class,
                 NotifyForwarder.Dispatcher.Slack, NotifyDispatcherSlack.class,
@@ -126,7 +125,7 @@ public class EventService {
         return __return;
     }
 
-    public NotifyForwarder ForwarderFindById(UUID id) {
+    public NotifyForwarder forwarderFindById(UUID id) {
         if (id == null)
             return null;
         return notifyForwarderRepository.findById(id).orElse(null);
@@ -164,7 +163,7 @@ public class EventService {
         List<String> destinations = new ArrayList<>();
         var forwarders = notifyContainer.getForwarders();
         {
-            var forwarder = this.ForwarderFindById(targetIn.getForwarderId());
+            var forwarder = this.forwarderFindById(targetIn.getForwarderId());
             if (forwarder != null)
                 forwarders.add(forwarder);
             forwarders = forwardersDistinct(forwarders);
@@ -238,7 +237,7 @@ public class EventService {
     }
 
 
-    private NotifyDispatcherInterface getNotifyDispatcher(NotifyForwarder.Dispatcher dispatcher) {
+    private NotifyDispatcherLogging getNotifyDispatcher(NotifyForwarder.Dispatcher dispatcher) {
         if (dispatcher == null)
             return null;
         synchronized (interfaces) {
@@ -266,12 +265,12 @@ public class EventService {
                 return;
             }
 
-            if (notifyForwarder.getDispatcher().equals(NotifyForwarder.Dispatcher.None)) {
+            if (notifyForwarder.getDispatcher().equals(NotifyForwarder.Dispatcher.Logging)) {
                 eventItem.setStatus(NotifyEventItem.Status.SKIPPED);
                 return;
             }
 
-            NotifyDispatcherInterface notifyDispatcher = getNotifyDispatcher(notifyForwarder.getDispatcher());
+            NotifyDispatcherLogging notifyDispatcher = getNotifyDispatcher(notifyForwarder.getDispatcher());
 
             if (notifyDispatcher == null) {
                 eventItem.setStatus(NotifyEventItem.Status.CONFLICT);

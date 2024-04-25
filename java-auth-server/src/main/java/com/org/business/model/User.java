@@ -8,10 +8,10 @@ import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Collection;
@@ -48,9 +48,9 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private LocalDate dtBirth;
     @Column(nullable = false)
-    private boolean enabled = false;
+    private boolean enabled;
     @Column(nullable = false)
-    private boolean deleted = false;
+    private boolean deleted;
 
     public User() {
 

@@ -1,9 +1,9 @@
 package com.org.business.adapters;
 
+import com.littlecode.parsers.HashUtil;
 import com.org.business.dto.ScopeOut;
 import com.org.business.model.Scope;
 import com.org.business.service.ScopeService;
-import com.org.core.utils.HashUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

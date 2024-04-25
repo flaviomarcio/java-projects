@@ -1,7 +1,7 @@
 package com.app.factory;
 
 import com.app.business.config.AppConfig;
-import com.app.business.service.ProxyService;
+import com.app.business.service.IngesterService;
 import com.littlecode.mq.MQ;
 import lombok.Getter;
 import org.mockito.Mockito;
@@ -15,7 +15,7 @@ import java.util.Map;
 @Service
 public class FactoryByTests {
     private Environment mockEnvironment;
-    private ProxyService proxyService;
+    private IngesterService ingesterService;
     private AppConfig appConfig;
     private MQ mq;
 
@@ -32,7 +32,7 @@ public class FactoryByTests {
         this.appConfig = Mockito.mock(AppConfig.class);
         Mockito.when(appConfig.isEnabled()).thenReturn(true);
         Mockito.when(appConfig.getStateSent()).thenReturn("Sent");
-        this.proxyService = new ProxyService(appConfig, mq);
+        this.ingesterService = new IngesterService(appConfig, mq);
     }
 
     private void makeMockEnvironment() {

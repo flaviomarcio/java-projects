@@ -1,6 +1,6 @@
 package com.app.business.adapters;
 
-import com.app.business.service.ProxyService;
+import com.app.business.service.IngesterService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 @RequiredArgsConstructor
 public class Controller {
-    private final ProxyService service;
+    private final IngesterService service;
 
     @GetMapping("/")
     public ResponseEntity<?> exec(@Valid @RequestBody Object payload) {

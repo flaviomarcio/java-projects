@@ -1,7 +1,7 @@
 package com.app.Tests;
 
 import com.app.business.dto.TaskOut;
-import com.app.business.service.ProxyService;
+import com.app.business.service.IngesterService;
 import com.app.factory.FactoryByTests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,12 +15,12 @@ import java.util.Map;
 public class ProxyServiceTest {
 
     private final FactoryByTests FACTORY = new FactoryByTests();
-    private final ProxyService proxyService = FACTORY.getProxyService();
+    private final IngesterService service = FACTORY.getIngesterService();
 
     @Test
     public void UT_000_CHECK_SAVE() {
         for (int i = 0; i < 1000; i++) {
-            var objectReturn = proxyService.proxy(Map.of("dt", LocalDateTime.now()));
+            var objectReturn = service.proxy(Map.of("dt", LocalDateTime.now()));
             Assertions.assertTrue(objectReturn.isOK());
             var taskOut = objectReturn.cast(TaskOut.class);
             Assertions.assertNotNull(taskOut);
