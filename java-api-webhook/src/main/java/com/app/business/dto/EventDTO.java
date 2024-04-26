@@ -12,7 +12,7 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class NotifyEventIn {
+public class EventDTO {
     private UUID id;
     private LocalDateTime dt;
 }

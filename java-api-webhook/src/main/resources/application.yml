@@ -116,8 +116,15 @@ littlecode:
 
 app:
   config:
-    webhook:
+    flux:
+      secs: 2
+      max: 10
+    reader:
       uri: http://localhost:8080
+      path: /events/read
       version: 0.0.0
       apiKey: 1234
+      intervalSeconds: 2
+      jitter: 0.75
+      maxAttempts: 10
 

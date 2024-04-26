@@ -1,10 +1,13 @@
 package com.app.factory;
 
-import com.app.business.service.EventService;
+import com.app.business.config.AppConfig;
+import com.app.business.service.EventConsumerService;
+import com.app.business.service.EventWritterService;
 import lombok.Getter;
 import org.mockito.Mockito;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 import java.util.Map;
@@ -13,7 +16,8 @@ import java.util.Map;
 @Service
 public class FactoryByTests {
     private Environment mockEnvironment;
-    private EventService notifyEventService;
+    private EventWritterService eventWritterService;
+    private EventConsumerService consumerService;
 
     public FactoryByTests() {
         setupMockClasses();
@@ -22,7 +26,8 @@ public class FactoryByTests {
 
     private void setupMockClasses() {
         this.mockEnvironment = Mockito.mock(Environment.class);
-        this.notifyEventService = new EventService();
+        this.eventWritterService = new EventWritterService();
+        this.consumerService = new EventConsumerService(Mockito.mock(AppConfig.ReaderConfig.class), Mockito.mock(WebClient.class));
     }
 
     private void makeMockEnvironment() {

@@ -1,8 +1,9 @@
 package com.app.business.service;
 
 import com.app.business.config.AppConfig;
-import com.app.business.dto.NotifyEventIn;
-import com.littlecode.parsers.ObjectUtil;
+import com.app.business.dto.EventDTO;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -16,8 +17,8 @@ import java.util.List;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class ConsumerService {
-    private final AppConfig appConfig;
+public class EventConsumerService {
+    private final AppConfig.ReaderConfig readerConfig;
     private final WebClient webClient;
 
     public void consumer() {
@@ -26,17 +27,17 @@ public class ConsumerService {
                 .uri(
                         uriBuilder ->
                                 uriBuilder
-                                        .path("/events")
-                                        .queryParam("version", appConfig.getVersion())
-                                        .queryParam("api_key", appConfig.getApiKey())
+                                        .path(readerConfig.getPath())
+                                        .queryParam("version", readerConfig.getVersion())
+                                        .queryParam("api_key", readerConfig.getApiKey())
                                         .build()
                 )
                 .retrieve()
                 .bodyToFlux(List.class)
                 .retryWhen(
                         Retry
-                                .backoff(3, Duration.ofSeconds(2))
-                                .jitter(0.75)
+                                .backoff(readerConfig.getMaxAttempts(), Duration.ofSeconds(readerConfig.getIntervalSeconds()))
+                                .jitter(readerConfig.getJitter())
                                 .onRetryExhaustedThrow
                                         (
                                                 (spec, signal) ->
@@ -52,7 +53,12 @@ public class ConsumerService {
                 );
     }
 
-    public void receiver(List<NotifyEventIn> events) {
-        log.info(ObjectUtil.toString(events));
+    public void receiver(List<EventDTO> events) {
+        var mapper = new ObjectMapper();
+        try {
+            log.info(mapper.writeValueAsString(events));
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

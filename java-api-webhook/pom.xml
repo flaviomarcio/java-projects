@@ -20,9 +20,6 @@
         <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <littlecode-version>1.0.0</littlecode-version>
-        <commons-io-version>2.15.1</commons-io-version>
-        <commons-lang3-version>3.14.0</commons-lang3-version>
         <springdoc-webflux-ui-version>2.5.0</springdoc-webflux-ui-version>
         <jackson-version>2.15.2</jackson-version>
         <java-jwt-version>4.2.1</java-jwt-version>
@@ -55,21 +52,6 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
-        <dependency>
-            <groupId>com.littlecode</groupId>
-            <artifactId>core-spring</artifactId>
-            <version>${littlecode-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.littlecode</groupId>
-            <artifactId>setup-spring</artifactId>
-            <version>${littlecode-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.littlecode</groupId>
-            <artifactId>business-spring</artifactId>
-            <version>${littlecode-version}</version>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-vault-config -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -117,18 +99,6 @@
             <groupId>org.modelmapper</groupId>
             <artifactId>modelmapper</artifactId>
             <version>${modelmapper-version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${commons-io-version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang3-version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-webflux-ui -->
         <dependency>

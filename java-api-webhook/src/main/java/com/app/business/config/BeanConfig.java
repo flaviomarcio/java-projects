@@ -13,12 +13,12 @@ import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
 @Configuration
 @RequiredArgsConstructor
 public class BeanConfig {
-    private final AppConfig appConfig;
+    private final AppConfig.ReaderConfig readerConfig;
 
     @Bean
     public WebClient getWebClient() {
         return WebClient.builder()
-                .baseUrl(appConfig.getUri())
+                .baseUrl(readerConfig.getUri())
                 .defaultHeader(CONNECTION, "Keep-alive")
                 .defaultHeader(CONTENT_TYPE, "text/event-stream;charset=UTF-8")
                 .build();
