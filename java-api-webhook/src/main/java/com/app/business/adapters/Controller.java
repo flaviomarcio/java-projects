@@ -1,4 +1,4 @@
-package com.app.business.adapters.controller;
+package com.app.business.adapters;
 
 import com.app.business.dto.NotifyEventIn;
 import com.app.business.service.EventService;

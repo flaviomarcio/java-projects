@@ -1,14 +1,16 @@
 package com.app.business.config;
 
-import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
+import lombok.Getter;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.UUID;
-
-@Slf4j
-@Data
+@Getter
 @Configuration
 public class AppConfig {
-    private UUID id;
+    @Value("${app.config.webhook.uri:}")
+    private String uri;
+    @Value("${app.config.webhook.version:}")
+    private String version;
+    @Value("${app.config.webhook.apiKey:}")
+    private String apiKey;
 }

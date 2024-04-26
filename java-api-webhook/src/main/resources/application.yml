@@ -1,5 +1,5 @@
 server:
-  port: ${config-master-port:8080}
+  port: 8080
   servlet:
     context-path: /
 spring:
@@ -61,8 +61,12 @@ spring:
 logging:
   level:
     root: INFO
+    org:
+      springframework: INFO
   file:
     name: /tmp/app.log
+
+
 
 springdoc:
   swagger-ui:
@@ -110,17 +114,10 @@ littlecode:
       id: services
       secret: services
 
-config:
-  input:
-    queue:
-      type: ${config-input-queue-type:AMQP}
-      name: ${config-input-queue-name:}
-      credential:
-        id: ${config-input-queue-credential-id:}
-        secret: ${config-input-queue-credential-secret:}
-  node:
-    type: ${config-node-type:OnetoAll}
-    host:
-      address: ${config-node-host-address:localhost}
-      port: ${config-node-host-port:8080}
-      token: ${config-node-host-token:8080}
+app:
+  config:
+    webhook:
+      uri: http://localhost:8080
+      version: 0.0.0
+      apiKey: 1234
+
