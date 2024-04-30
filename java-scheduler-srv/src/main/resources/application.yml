@@ -1,0 +1,78 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+logging:
+  level:
+    root: INFO
+  file:
+    name: /tmp/app.log
+spring:
+  application:
+    name: app
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    time-zone: America/Sao_Paulo
+    serialization:
+      fail-on-empty-beans: false
+    deserialization:
+      fail-on-unknown-properties: true
+    date-format: yyyy-MM-dd HH:mm:ss
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: none
+        default_schema: tools
+        format_sql: false
+        open-in-view: false
+        show_sql: false
+        use_sql_comments: false
+  datasource:
+    #driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username:
+    password:
+  config:
+    import: ${vault_configimport:}
+  cloud:
+    vault:
+      enabled: ${vault_enabled:false}
+      scheme: ${vault_scheme:http}
+      uri: ${vault_uri:http://localhost:8200}
+      authentication: ${vault_authentication:TOKEN}
+      token: ${vault_token:}
+      app-role:
+        role-id: ${vault_app_role_role_id:}
+        secret-id: ${vault_app_role_secret_id:}
+      connection-timeout: ${vault_timeout:5000}
+      read-timeout: ${vault_timeout:5000}
+      fail-fast: ${vault_fastfail:true}
+      kv:
+        backend: ${vault_kv_path:}
+        default-context: ${vault_application_name:}
+
+springdoc:
+  swagger-ui:
+    operationsSorter: method
+    disable-swagger-default-url: true
+    path: swagger-ui
+  servers:
+    dev: http://localhost:8080
+    stg: http://localhost:8080
+    prd: http://localhost:8080
+  info:
+    company: "Company"
+    product: "API Ingester"
+    title: "Ingester tools"
+    description: "Serviço ingestão de requisições"
+    version: "1.0.0"
+
+app:
+  config:
+    enabled: true
+    state:
+      sent: "Sent"
