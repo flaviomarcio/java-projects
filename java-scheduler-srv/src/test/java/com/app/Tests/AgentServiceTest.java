@@ -24,6 +24,8 @@ public class AgentServiceTest {
                 .getScheduleItemList()
                         .forEach(scheduleItem -> {
                             Assertions.assertDoesNotThrow(() -> agentService.exec(scheduleItem.getId()));
+                            Assertions.assertDoesNotThrow(() -> agentService.updateCheckPoint(null));
+                            Assertions.assertDoesNotThrow(() -> agentService.updateCheckPoint(ScheduleItemCheckPointIn.builder().id(UUID.randomUUID()).build()));
                             Assertions.assertDoesNotThrow(() ->
                                     agentService.updateCheckPoint(
                                             ScheduleItemCheckPointIn

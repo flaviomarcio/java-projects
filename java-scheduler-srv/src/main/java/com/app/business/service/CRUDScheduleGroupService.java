@@ -21,7 +21,6 @@ import java.util.UUID;
 public class CRUDScheduleGroupService extends CrudServiceTemplate<ScheduleGroup, ScheduleGroupIn> {
     private final ScheduleGroupRepository scheduleGroupRepository;
 
-    @Override
     public ScheduleGroupIn inFrom(ScheduleGroup in) {
         return ScheduleGroupIn
                 .builder()
@@ -34,7 +33,6 @@ public class CRUDScheduleGroupService extends CrudServiceTemplate<ScheduleGroup,
     }
 
     @Transactional
-    @Override
     public ObjectReturn saveIn(ScheduleGroupIn in) {
         if (in == null)
             return ObjectReturn.BadRequest(ScheduleGroupIn.class);
@@ -59,7 +57,6 @@ public class CRUDScheduleGroupService extends CrudServiceTemplate<ScheduleGroup,
         return ObjectReturn.of(in);
     }
 
-    @Override
     public ObjectReturn disable(UUID id) {
         if (id == null)
             return ObjectReturn.BadRequest("Invalid id");
@@ -74,7 +71,6 @@ public class CRUDScheduleGroupService extends CrudServiceTemplate<ScheduleGroup,
         return ObjectReturn.of(scheduleGroup);
     }
 
-    @Override
     public ObjectReturn findIn(UUID id) {
         if (id == null)
             return ObjectReturn.BadRequest("Invalid id");
@@ -86,7 +82,6 @@ public class CRUDScheduleGroupService extends CrudServiceTemplate<ScheduleGroup,
         return ObjectReturn.of(inFrom(ScheduleGroup));
     }
 
-    @Override
     public ObjectReturn list() {
         List<ScheduleGroupIn> notifyInList = new ArrayList<>();
         scheduleGroupRepository.findAll()
