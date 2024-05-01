@@ -1,6 +1,9 @@
 package com.app.factory;
 
 import com.app.business.config.AppConfig;
+import com.app.business.domain.ExecutionType;
+import com.app.business.dto.ScheduleGroupIn;
+import com.app.business.dto.ScheduleItemIn;
 import com.app.business.model.ScheduleGroup;
 import com.app.business.model.ScheduleItem;
 import com.app.business.model.ScheduleItemAction;
@@ -34,7 +37,10 @@ public class FactoryByTests {
     private AppConfig appConfig;
     private MQ mq;
 
-    private final List<ScheduleGroup> scheduleGroupList=new ArrayList<>();
+    private final List<ScheduleGroupIn> inScheduleGroupList = new ArrayList<>();
+    private final List<ScheduleItemIn> inScheduleItemList = new ArrayList<>();
+
+    private final List<ScheduleGroup> scheduleGroupList = new ArrayList<>();
     private final List<ScheduleItem> scheduleItemList=new ArrayList<>();
     private final List<ScheduleItemAction> scheduleItemActionList=new ArrayList<>();
     private final List<ScheduleItemCheckPoint> scheduleItemCheckPointList=new ArrayList<>();
@@ -49,6 +55,7 @@ public class FactoryByTests {
         this.mockMockEnvironment();
         this.mockScheduleGroup();
         this.mockScheduleItem();
+        this.makeIn();
     }
 
     private void mockClasses() {
@@ -104,7 +111,6 @@ public class FactoryByTests {
                                 .updatedAt(LocalDateTime.now())
                                 .name("default")
                                 .enabled(true)
-                                .items(new ArrayList<>())
                                 .build()
                 );
         this.scheduleGroupList
@@ -131,7 +137,7 @@ public class FactoryByTests {
                             .createdAt(LocalDateTime.now())
                             .updatedAt(LocalDateTime.now())
                             .enabled(true)
-                            .executionType(ScheduleItemAction.ExecutionType.PRINT)
+                            .executionType(ExecutionType.PRINT)
                             .headers(ObjectUtil.toString(Map.of("Content-Type","application.json")))
                             .build(),
                     ScheduleItemAction
@@ -140,7 +146,7 @@ public class FactoryByTests {
                             .createdAt(LocalDateTime.now())
                             .updatedAt(LocalDateTime.now())
                             .enabled(true)
-                            .executionType(ScheduleItemAction.ExecutionType.PRINT)
+                            .executionType(ExecutionType.PRINT)
                             .headers(ObjectUtil.toString(Map.of("Content-Type","application.json")))
                             .build()
             );
@@ -153,7 +159,7 @@ public class FactoryByTests {
                                     .id(UUID.randomUUID())
                                     .createdAt(LocalDateTime.now())
                                     .updatedAt(LocalDateTime.now())
-                                    .scheduleGroup(scheduleGroup)
+                                    .group(scheduleGroup)
                                     .name("default")
                                     .description("default")
                                     .enabled(true)
@@ -181,5 +187,7 @@ public class FactoryByTests {
         Mockito.when(scheduleItemRepository.findAll()).thenReturn(this.scheduleItemList);
     }
 
+    private void makeIn() {
 
+    }
 }

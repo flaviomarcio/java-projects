@@ -17,11 +17,11 @@ public class CrudScheduleItemTest {
     public void UT_000_CHECK_SAVE() {
 
         factory
-                .getScheduleItemList()
+                .getInScheduleItemList()
                 .forEach(scheduleItem -> {
 
-                    Assertions.assertDoesNotThrow(() -> crudScheduleItemService.save(scheduleItem));
-                    Assertions.assertDoesNotThrow(() -> crudScheduleItemService.get(scheduleItem.getId()));
+                    Assertions.assertDoesNotThrow(() -> crudScheduleItemService.saveIn(scheduleItem));
+                    Assertions.assertDoesNotThrow(() -> crudScheduleItemService.findIn(scheduleItem.getId()));
                     Assertions.assertDoesNotThrow(() -> crudScheduleItemService.list());
 
                 });

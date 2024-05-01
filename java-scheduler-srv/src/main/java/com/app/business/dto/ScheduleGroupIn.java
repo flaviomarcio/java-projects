@@ -1,7 +1,5 @@
-package com.app.business.model;
+package com.app.business.dto;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,11 +10,9 @@ import java.util.UUID;
 
 @Builder
 @Data
-@Table
 @AllArgsConstructor
 @NoArgsConstructor
-public class ScheduleGroup {
-    @Id
+public class ScheduleGroupIn {
     private UUID id;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

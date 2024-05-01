@@ -1,6 +1,6 @@
 package com.app.Tests;
 
-import com.app.business.dto.CheckPointIn;
+import com.app.business.dto.ScheduleItemCheckPointIn;
 import com.app.business.service.AgentService;
 import com.app.factory.FactoryByTests;
 import org.junit.jupiter.api.Assertions;
@@ -26,7 +26,7 @@ public class AgentServiceTest {
                             Assertions.assertDoesNotThrow(() -> agentService.exec(scheduleItem.getId()));
                             Assertions.assertDoesNotThrow(() ->
                                     agentService.updateCheckPoint(
-                                            CheckPointIn
+                                            ScheduleItemCheckPointIn
                                                     .builder()
                                                     .id(scheduleItem.getId())
                                                     .value(UUID.randomUUID().toString())

@@ -26,7 +26,6 @@ public class JpaModelTest {
                     .createdAt(LocalDateTime.now())
                     .updatedAt(LocalDateTime.now())
                     .name("default")
-                    .items(new ArrayList<>())
                     .enabled(true)
                     .build();
         });
@@ -37,7 +36,6 @@ public class JpaModelTest {
                 .createdAt(LocalDateTime.now())
                 .updatedAt(LocalDateTime.now())
                 .name("default")
-                .items(new ArrayList<>())
                 .enabled(true)
                 .build();
 
@@ -46,14 +44,12 @@ public class JpaModelTest {
         Assertions.assertDoesNotThrow(model::getUpdatedAt);
         Assertions.assertDoesNotThrow(model::getName);
         Assertions.assertDoesNotThrow(model::isEnabled);
-        Assertions.assertDoesNotThrow(model::getItems);
 
         Assertions.assertDoesNotThrow(()->model.setId(UUID.randomUUID()));
         Assertions.assertDoesNotThrow(()->model.setCreatedAt(LocalDateTime.now()));
         Assertions.assertDoesNotThrow(()->model.setUpdatedAt(LocalDateTime.now()));
         Assertions.assertDoesNotThrow(()->model.setName(""));
         Assertions.assertDoesNotThrow(()->model.setEnabled(false));
-        Assertions.assertDoesNotThrow(()->model.setItems(new ArrayList<>()));
     }
 
     @Test
@@ -79,7 +75,7 @@ public class JpaModelTest {
                 .id(UUID.randomUUID())
                 .createdAt(LocalDateTime.now())
                 .updatedAt(LocalDateTime.now())
-                .scheduleGroup(ScheduleGroup.builder().enabled(true).build())
+                .group(ScheduleGroup.builder().enabled(true).build())
                 .name("default")
                 .description("description")
                 .enabled(true)
@@ -91,7 +87,7 @@ public class JpaModelTest {
         Assertions.assertDoesNotThrow(model::getCreatedAt);
         Assertions.assertDoesNotThrow(model::getUpdatedAt);
         Assertions.assertDoesNotThrow(model::getName);
-        Assertions.assertDoesNotThrow(model::getScheduleGroup);
+        Assertions.assertDoesNotThrow(model::getGroup);
         Assertions.assertDoesNotThrow(model::getDescription);
         Assertions.assertDoesNotThrow(model::isEnabled);
         Assertions.assertDoesNotThrow(model::getActions);
@@ -101,7 +97,7 @@ public class JpaModelTest {
         Assertions.assertDoesNotThrow(()->model.setCreatedAt(LocalDateTime.now()));
         Assertions.assertDoesNotThrow(()->model.setUpdatedAt(LocalDateTime.now()));
         Assertions.assertDoesNotThrow(()->model.setName(""));
-        Assertions.assertDoesNotThrow(()->model.setScheduleGroup(ScheduleGroup.builder().enabled(false).build()));
+        Assertions.assertDoesNotThrow(() -> model.setGroup(ScheduleGroup.builder().enabled(false).build()));
         Assertions.assertDoesNotThrow(()->model.setDescription("description"));
         Assertions.assertDoesNotThrow(()->model.setEnabled(false));
         Assertions.assertDoesNotThrow(()->model.setActions(new ArrayList<>()));
@@ -121,7 +117,6 @@ public class JpaModelTest {
                     .updatedAt(LocalDateTime.now())
                     .headers("{\"header\":\"value\"}")
                     .enabled(true)
-                    .executionType(ScheduleItemAction.ExecutionType.AMQP)
                     .build();
         });
 
@@ -132,7 +127,6 @@ public class JpaModelTest {
                 .updatedAt(LocalDateTime.now())
                 .headers("{\"header\":\"value\"}")
                 .enabled(true)
-                .executionType(ScheduleItemAction.ExecutionType.AMQP)
                 .build();
 
         Assertions.assertDoesNotThrow(model::getId);
@@ -147,7 +141,6 @@ public class JpaModelTest {
         Assertions.assertDoesNotThrow(()->model.setUpdatedAt(LocalDateTime.now()));
         Assertions.assertDoesNotThrow(()->model.setHeaders("{\"header\":\"value\"}"));
         Assertions.assertDoesNotThrow(()->model.setEnabled(false));
-        Assertions.assertDoesNotThrow(()->model.setExecutionType(ScheduleItemAction.ExecutionType.AMQP));
 
     }
 

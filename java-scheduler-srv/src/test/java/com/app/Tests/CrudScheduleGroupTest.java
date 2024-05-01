@@ -9,7 +9,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 public class CrudScheduleGroupTest {
-
     private final FactoryByTests factory = new FactoryByTests();
     private final CRUDScheduleGroupService crudScheduleGroupService = factory.getCrudScheduleGroupService();
 
@@ -17,12 +16,12 @@ public class CrudScheduleGroupTest {
     public void UT_000_CHECK_SAVE() {
 
         factory
-                .getScheduleGroupList()
+                .getInScheduleGroupList()
                 .forEach(scheduleGroup -> {
 
-                    Assertions.assertDoesNotThrow(() ->  crudScheduleGroupService.save(scheduleGroup));
-                    Assertions.assertDoesNotThrow(() ->  crudScheduleGroupService.get(scheduleGroup.getId()));
-                    Assertions.assertDoesNotThrow(() ->  crudScheduleGroupService.list());
+                    Assertions.assertDoesNotThrow(() -> crudScheduleGroupService.saveIn(scheduleGroup));
+                    Assertions.assertDoesNotThrow(() -> crudScheduleGroupService.findIn(scheduleGroup.getId()));
+                    Assertions.assertDoesNotThrow(() -> crudScheduleGroupService.list());
 
                 });
     }

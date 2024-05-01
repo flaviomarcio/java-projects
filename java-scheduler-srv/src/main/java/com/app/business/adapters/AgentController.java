@@ -1,5 +1,6 @@
 package com.app.business.adapters;
 
+import com.app.business.dto.ScheduleItemCheckPointIn;
 import com.app.business.service.AgentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,5 +19,10 @@ public class AgentController {
     @PostMapping("/exec")
     public ResponseEntity<?> exec(UUID id) {
         return service.exec(id).asResultHttp();
+    }
+
+    @PostMapping("/exec")
+    public ResponseEntity<?> checkPoint(ScheduleItemCheckPointIn in) {
+        return service.updateCheckPoint(in).asResultHttp();
     }
 }

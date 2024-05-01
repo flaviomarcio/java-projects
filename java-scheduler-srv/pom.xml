@@ -73,6 +73,11 @@
             <artifactId>cloud-mq-spring</artifactId>
             <version>${littlecode-version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.littlecode</groupId>
+            <artifactId>jpa-spring</artifactId>
+            <version>${littlecode-version}</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

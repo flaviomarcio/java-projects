@@ -4,7 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e778a4a6-aa7d-47b5-a3da-0d0209fe5602" name="Changes" comment="" />
+    <list default="true" id="e778a4a6-aa7d-47b5-a3da-0d0209fe5602" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/adapters/CRUDScheduleGroupController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/adapters/CRUDScheduleItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/config/CRUDConst.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/domain/ExecutionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/dto/ScheduleGroupIn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/dto/ScheduleItemIn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/templates/CRUDBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/test/java/com/app/Tests/CRUDBaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/adapters/AgentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/adapters/AgentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/adapters/ConfigController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/dto/CheckPointIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/dto/ScheduleItemCheckPointIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/model/ScheduleGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/model/ScheduleGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/model/ScheduleItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/model/ScheduleItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/model/ScheduleItemAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/model/ScheduleItemAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/service/AgentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/service/AgentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/service/CRUDScheduleGroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/service/CRUDScheduleGroupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/service/CRUDScheduleItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/main/java/com/app/business/service/CRUDScheduleItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-scheduler-srv/src/test/java/com/app/Tests/AgentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/test/java/com/app/Tests/AgentServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-scheduler-srv/src/test/java/com/app/Tests/ConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/test/java/com/app/Tests/ConfigTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-scheduler-srv/src/test/java/com/app/Tests/CrudScheduleGroupTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/test/java/com/app/Tests/CrudScheduleGroupTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-scheduler-srv/src/test/java/com/app/Tests/CrudScheduleItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/test/java/com/app/Tests/CrudScheduleItemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-scheduler-srv/src/test/java/com/app/Tests/JpaDtoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/test/java/com/app/Tests/JpaDtoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-scheduler-srv/src/test/java/com/app/Tests/JpaModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/test/java/com/app/Tests/JpaModelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-scheduler-srv/src/test/java/com/app/factory/FactoryByTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-scheduler-srv/src/test/java/com/app/factory/FactoryByTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +77,7 @@
     &quot;Spring Boot.Application.executor&quot;: &quot;Debug&quot;,
     &quot;git-widget-placeholder&quot;: &quot;release/0.0.1&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/storage/home/person-job/person/git/github/java-projects/java-api-crud&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/storage/home/person-git/github/java-projects/java-notify-proxy&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -150,8 +176,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
       </set>
     </attachedChunks>
   </component>
@@ -175,6 +201,8 @@
       <workItem from="1713988570128" duration="3412000" />
       <workItem from="1714041165203" duration="3784000" />
       <workItem from="1714054799888" duration="9389000" />
+      <workItem from="1714520107728" duration="1164000" />
+      <workItem from="1714523761279" duration="3000" />
     </task>
     <servers />
   </component>

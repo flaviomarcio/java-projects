@@ -1,8 +1,12 @@
 package com.app.business.model;
 
+import com.app.business.domain.ExecutionType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -20,8 +24,4 @@ public class ScheduleItemAction {
     private ExecutionType executionType;
     private String headers;
     private boolean enabled;
-
-    public enum ExecutionType {
-        PRINT, REQUEST, AMQP
-    }
 }

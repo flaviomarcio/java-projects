@@ -1,6 +1,6 @@
 package com.app.business.service;
 
-import com.app.business.dto.CheckPointIn;
+import com.app.business.dto.ScheduleItemCheckPointIn;
 import com.app.business.model.ScheduleItemCheckPoint;
 import com.app.business.repository.ScheduleItemCheckPointRepository;
 import com.app.business.repository.ScheduleItemRepository;
@@ -23,9 +23,9 @@ public class AgentService {
         return ObjectReturn.Empty();
     }
 
-    public ObjectReturn updateCheckPoint(CheckPointIn in) {
+    public ObjectReturn updateCheckPoint(ScheduleItemCheckPointIn in) {
         if(in==null)
-            return ObjectReturn.BadRequest("[CheckPointIn in] is null");
+            return ObjectReturn.BadRequest("[ScheduleItemCheckPointIn in] is null");
         var scheduleItem=scheduleItemRepository.findById(in.getId()).orElse(null);
         if(scheduleItem==null)
             return ObjectReturn.NotFound("Invalid %s",in.getId());
